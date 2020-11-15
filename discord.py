@@ -1,7 +1,7 @@
 import discord
+import os
 
 client = discord.Client()
-token = 'Nzc3MDk4MDI2NDEzMDY0MjA0.X6-e7w.fX2h-sCLCdeh5FXHgIdCE6Q0d4k'
 
 @client.event
 async def on_ready():
@@ -28,5 +28,5 @@ async def on_message(message):
             embed.set_footer(text=f"{message.author}", icon_url='https://images-ext-1.discordapp.net/external/vJpRtzfm6vVqfY3YeLLtcO1U1DsxL2TG5CwgzWXInKg/%3Fitemid%3D15950157/https/media1.tenor.com/images/299cf0fe5129cecd4bb839a2dba7e07a/tenor.gif')
             await message.channel.send(embed=embed)
 
-
-client.run(token)
+access_token= os.environ["BOT_TOKEN"]
+client.run(access_token)
